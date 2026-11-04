@@ -61,7 +61,7 @@ jobs:
         with:
           # Suffix bumped to evict caches that held 1.83.0 / <unknown rustc>
           # artifacts produced before RUSTUP_TOOLCHAIN=stable pinned the job.
-          key: ${{ matrix.os }}-stablepin
+          key: ${{ matrix.os }}-stablepin-${{ github.run_id }}
 
       - name: Install mold linker (Linux)
         if: runner.os == 'Linux'
